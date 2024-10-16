@@ -1,0 +1,17 @@
+<main class="flex flex-col justify-center items-center">
+  <app-header class="mb-20" />
+  <div class="w-full ml-60 flex items-center">
+    <div>
+      @for(user of users;track user.id){
+      <app-user [user]="user" (select)="onUserSelection($event)" />
+      }
+      <!-- <app-user [user]="users[0]" (select)="onUserSelection($event)" />
+      <app-user [user]="users[0]" (select)="onUserSelection($event)" />
+      <app-user [user]="users[0]" (select)="onUserSelection($event)" /> -->
+    </div>
+    <app-tasks
+      [userName]="selectedUser?.name"
+      class="ml-[25rem] border-2 border-black"
+    />
+  </div>
+</main>
