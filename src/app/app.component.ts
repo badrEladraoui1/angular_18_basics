@@ -3,19 +3,19 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './users';
 import { TasksComponent } from './tasks/tasks.component';
-import { User } from './Types';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, UserComponent, TasksComponent],
+  imports: [HeaderComponent, UserComponent, TasksComponent, NgFor, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   users = DUMMY_USERS;
   // selectedUser: User | undefined = undefined;
-  selectedUserId = 'u1';
+  selectedUserId!: string;
 
   get selectedUser() {
     return DUMMY_USERS.find((user) => user.id === this.selectedUserId);

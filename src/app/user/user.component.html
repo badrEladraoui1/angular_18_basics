@@ -2,22 +2,11 @@
   class="flex flex-col justify-start items-start gap-3 text-white font-semibold mt-5"
 >
   <button
+    [class.selected]="selected"
     (click)="onSelectUser()"
     class="flex justify-center items-center gap-2 bg-black hover:bg-white hover:text-black px-3 py-1 rounded-md"
   >
     <img width="30" height="50" [src]="imagePath" [alt]="user.name" />
     <span>{{ user.name }}</span>
   </button>
-  <!-- <button
-    class="flex justify-center items-center bg-black hover:bg-white hover:text-black px-3 py-1 rounded-md"
-  >
-    <img width="30" height="50" src="assets/brown_mac_man.png" alt="mac_man" />
-    <span>NAME 2</span>
-  </button>
-  <button
-    class="flex justify-center items-center bg-black hover:bg-white hover:text-black px-3 py-1 rounded-md"
-  >
-    <img width="30" height="50" src="assets/black_mac_man.png" alt="mac_man" />
-    <span>NAME 3</span>
-  </button> -->
 </div>

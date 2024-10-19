@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
-import { User } from '../Types';
+import { type User } from '../Types';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
@@ -13,6 +14,7 @@ export class UserComponent {
   // @Input({ required: true }) name!: string;
   // @Input({ required: true }) avatar!: string;
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
 
   @Output() select = new EventEmitter<string>();
   // select = output<string>();

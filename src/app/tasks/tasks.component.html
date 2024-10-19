@@ -1,1 +1,28 @@
-<p>{{ userName }}</p>
+@if (isAddingTask) {
+<app-new-task (closeDialog)="onCloseDialog()" (add)="onAddTask($event)" />
+}
+
+<section class="h-[calc(100vh-2rem)] flex flex-col">
+  <header class="bg-white rounded-md p-3">
+    <h2 class="font-mono text-2xl underline mb-5">
+      <span class="font-bold">{{ userName }}</span
+      >'s Tasks
+    </h2>
+    <menu>
+      <button
+        (click)="onStartAddTask()"
+        class="bg-black rounded-md p-2 text-white hover:text-black hover:bg-white hover:border hover:border-black font-bold"
+      >
+        Add Task
+      </button>
+    </menu>
+  </header>
+
+  <ul class="overflow-y-auto flex-grow">
+    @for(task of selectedUserTasks;track task.id){
+    <li>
+      <app-task [userTask]="task" (complete)="onCompleteTask($event)" />
+    </li>
+    }
+  </ul>
+</section>
