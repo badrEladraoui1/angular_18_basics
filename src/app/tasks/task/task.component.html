@@ -3,7 +3,7 @@
 >
   <div>
     <h2 class="text-3xl">{{ userTask.title }}</h2>
-    <time class="font-thin">{{ userTask.dueDate }}</time>
+    <time class="font-thin">{{ userTask.dueDate | date : "fullDate" }}</time>
   </div>
 
   <p class="font-mono">{{ userTask.summary }}</p>

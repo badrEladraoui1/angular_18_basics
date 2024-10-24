@@ -1,6 +1,7 @@
-<div
+<!-- <div
   class="flex flex-col justify-start items-start gap-3 text-white font-semibold mt-5"
->
+> -->
+<app-card>
   <button
     [class.selected]="selected"
     (click)="onSelectUser()"
@@ -9,4 +10,5 @@
     <img width="30" height="50" [src]="imagePath" [alt]="user.name" />
     <span>{{ user.name }}</span>
   </button>
-</div>
+</app-card>
+<!-- </div> -->

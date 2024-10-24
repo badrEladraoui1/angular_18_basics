@@ -1,5 +1,5 @@
 @if (isAddingTask) {
-<app-new-task (closeDialog)="onCloseDialog()" (add)="onAddTask($event)" />
+<app-new-task (closeDialog)="onCloseDialog()" [userId]="userId" />
 }
 
 <section class="h-[calc(100vh-2rem)] flex flex-col">
@@ -21,7 +21,7 @@
   <ul class="overflow-y-auto flex-grow">
     @for(task of selectedUserTasks;track task.id){
     <li>
-      <app-task [userTask]="task" (complete)="onCompleteTask($event)" />
+      <app-task [userTask]="task" />
     </li>
     }
   </ul>
